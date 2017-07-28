@@ -5,4 +5,4 @@
 -   异地登录出现验证码的情况
 -   139邮箱用的密码加密算法，懒得弄。。
 
-![](http://ww1.sinaimg.cn/large/e729c8a3ly1fhzkelq9nnj20j60dl40k.jpg)
+![](../image/选区_040.png)

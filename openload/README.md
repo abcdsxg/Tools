@@ -2,11 +2,11 @@
 
 首先需要去`openload.co`注册一个账号，访问较慢需要翻墙。然后登陆到后台记下你的api参数，查看apikey需要输入密码
 
-![](http://ww1.sinaimg.cn/large/e729c8a3ly1fhzixxkwcmj20lp05kt8w.jpg)
+![](../image/选区_036.png)
 
 然后新建一个文件夹，F12打开控制台，点击文件夹，可以看到文件夹id
 
-![](http://ww1.sinaimg.cn/large/e729c8a3ly1fhzj0d9relj20js0dmtai.jpg)
+![](../image/选区_037.png)
 
 好了，这三个参数搞定，可以运行代码了，两种方式自己选择
 
@@ -20,7 +20,7 @@
 
 -   clone项目自己运行，需要安装[go环境](https://golang.org/)，然后修改`openload/openload.go` 中的参数，想开携程在`openload/gameOfThrones.go`中的`parseUrl(index, url)`前面加关键词`go`即可
 
-    ![](http://ww1.sinaimg.cn/large/e729c8a3ly1fhzj205s5fj209f03omx6.jpg)
+    ![](../image/选区_038.png)
 
 ### 注意事项
 
@@ -30,4 +30,4 @@
 
 -   抓取完后台应该有4页，每页默认20个，目前更新到第二集，所以最后一页应该有两集。
 
-    ![](http://ww1.sinaimg.cn/large/e729c8a3ly1fhzk6xmyx6j21930n879s.jpg)
+    ![](../image/选区_039.png)
