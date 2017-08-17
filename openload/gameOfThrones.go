@@ -15,7 +15,7 @@ import (
 )
 
 func ParseSunkd() ([]string, error) {
-	url := "http://moviesunkd.net/%E6%AC%8A%E5%8A%9B%E7%9A%84%E9%81%8A%E6%88%B2-game-thrones-4/"
+	url := "http://moviesunus.net/%E6%AC%8A%E5%8A%9B%E7%9A%84%E9%81%8A%E6%88%B2-game-thrones-4/"
 	doc, err := goquery.NewDocument(url)
 	if err != nil {
 		log.Print("url出错")
@@ -30,7 +30,7 @@ func ParseSunkd() ([]string, error) {
 	props.Each(func(i int, prop *goquery.Selection) {
 		prop.Find(`a`).Each(func(j int, ss *goquery.Selection) {
 			result, _ := ss.Attr("href")
-			if strings.Contains(result, "moviesunkd.net/?p") {
+			if strings.Contains(result, "moviesunus.net/?p") {
 				links = append(links, result)
 			}
 		})
@@ -43,13 +43,16 @@ var wg sync.WaitGroup
 var rw sync.Mutex
 var urls []string
 
-func GetSunkdUrls(postUrls []string) ([]string, error) {
-	wg.Add(len(postUrls))
+func GetSunkdUrls(postUrls []string, from int, to int) ([]string, error) {
+	// wg.Add(len(postUrls))
+	if from != 0 && to > from {
+		postUrls = postUrls[from-1 : to]
+	}
 	for index, url := range postUrls {
 		//go parseUrl(index, url)
 		parseUrl(index, url)
 	}
-	wg.Wait()
+	// wg.Wait()
 	return urls, nil
 }
 
@@ -60,13 +63,7 @@ func parseUrl(i int, u string) {
 	if err != nil {
 		log.Printf("第%d条网址:%s没有匹配到", i, u)
 	}
-	req.Header.Set("Cookie", "__cfduid=dd5d66240b675cfdd8e6554b09f43bd901500699460;"+
-		" wordpress_test_cookie=WP+Cookie+check;"+
-		" wordpress_logged_in_5e9088018b968adb67db841f267c0900=mm11%7C1532602490%7Cn5mu5Lc5i0kpeh5GDSzknTQ7kGcnZ0ZnbRGqqfOimOX%7C5d5969731471c8e18f2910ec7725e4ac5b165ecce4d0baa4a906a4825153b41d;"+
-		" _ga=GA1.2.209954273.1500699462; _gid=GA1.2.434515712.1501066384;"+
-		" innity.crtg.728_90=IN2p120%2CIN2p100%2CIN2p080%2CIN2p060%2CIN2p040%2C;"+
-		" innity.crtg.300_250=IN1p120%2CIN1p100%2CIN1p080%2CIN1p060%2CIN1p040%2C;"+
-		" __AF=58ee5ee1-4d27-4f09-a52d-fdb4473f17e4")
+	req.Header.Set("Cookie", `wordpress_logged_in_7bc13acc3b84417264f969a8b15c513e=mm13%7C1503118612%7C8ovslXDeIdyHMLmeI7HTUayoac382KIm8t5mQZX08cf%7C1f913a45a1b22de1a9b12db1f3db69146b0e2403f21b0bf2e79112b5a881927b; `)
 
 	res, err := client.Do(req)
 	d, err := goquery.NewDocumentFromResponse(res)
@@ -89,7 +86,7 @@ func parseUrl(i int, u string) {
 	} else {
 		log.Printf("第%d条网址:%s没有匹配到", i, u)
 	}
-	wg.Done()
+	// wg.Done()
 }
 
 func RemoteUpload(urls []string) {
