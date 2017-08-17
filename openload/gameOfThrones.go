@@ -63,6 +63,7 @@ func parseUrl(i int, u string) {
 	if err != nil {
 		log.Printf("第%d条网址:%s没有匹配到", i, u)
 	}
+	//这里需要替换cookie，具体看readme
 	req.Header.Set("Cookie", `wordpress_logged_in_7bc13acc3b84417264f969a8b15c513e=mm13%7C1503118612%7C8ovslXDeIdyHMLmeI7HTUayoac382KIm8t5mQZX08cf%7C1f913a45a1b22de1a9b12db1f3db69146b0e2403f21b0bf2e79112b5a881927b; `)
 
 	res, err := client.Do(req)
