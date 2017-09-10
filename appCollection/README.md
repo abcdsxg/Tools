@@ -14,3 +14,7 @@
 - [streamio](https://www.strem.io/)  helps you organize and instantly watch your favorite videos, movies, TV series and TV channels.
 - [beyond compare](https://www.scootersoftware.com/download.php) an app designed to provide you with a full suite of file management and comparison tools.
 - [visual studio code](https://code.visualstudio.com/download)  a code editor by Microsoft
+
+# MAC
+
+-   iPic
