@@ -1,0 +1,27 @@
+#git
+alias gco='git checkout'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gs='git status'
+alias gp='git pull'
+alias gpb='git pull --rebase'
+###服务器专用：初始化包含源码的钩子仓库
+alias ginit='git init \
+&& git config receive.denyCurrentBranch ignore \
+&& echo -e "#!/bin/sh\nGIT_WORK_TREE=$PWD git reset --hard\n echo \"ok\"" > $PWD/.git/hooks/post-receive \
+&& chmod +x $PWD/.git/hooks/post-receive'
+
+#docker
+
+alias di='docker images -a'
+alias dp='docker ps -a'
+alias drm='docker rm -f'
+alias drmi='docker rmi'
+alias drs='docker restart'
+alias ds='docker start'
+
+#python
+
+###便携切换python版本
+alias py="alias python='python' && alias pip='pip'"
+alias py3="alias python='python3' && alias pip='pip3'"
