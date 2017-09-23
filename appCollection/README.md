@@ -14,6 +14,7 @@
 - [streamio](https://www.strem.io/)  helps you organize and instantly watch your favorite videos, movies, TV series and TV channels.
 - [beyond compare](https://www.scootersoftware.com/download.php) an app designed to provide you with a full suite of file management and comparison tools.
 - [visual studio code](https://code.visualstudio.com/download)  a code editor by Microsoft
+- [telegram](https://telegram.org/apps)a cloud-based mobile and desktop messaging app with a focus on security and speed.
 
 # MAC
 
