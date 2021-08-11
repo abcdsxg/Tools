@@ -19,9 +19,12 @@ alias drm='docker rm -f'
 alias drmi='docker rmi'
 alias drs='docker restart'
 alias ds='docker start'
+alias dup 'docker-compose up -d'
+alias ddown 'docker-compose down'
 
 #python
 
 ###便携切换python版本
 alias py="alias python='python' && alias pip='pip'"
 alias py3="alias python='python3' && alias pip='pip3'"
+alias pipupdate "pip freeze —local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
